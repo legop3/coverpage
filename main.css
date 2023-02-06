@@ -13,15 +13,51 @@ body {
     font-size: 4em;
 }
 
-.paragraph {
+.paragraph, p {
     color: white;
     right: 50%;
     /* transform: (translate(0, +50%)); */
     /* position: fixed; */
-    font-weight: bolder;
+    /* font-weight: bold; */
     font-size: 1.5em;
 }
 
 .gamebox {
     float: right;
+}
+
+.dropdown-hide {
+    display: none;
+}
+.dropdown-show {
+    display: contents;
+}
+
+/* @keyframes dropdown {
+    0% {transform: rotate(0deg);}
+    100% { transform: rotate(90deg);}
+} */
+
+/* .skew {
+    animation-name: dropdown;
+    animation-duration: 3s;
+} */
+
+@keyframes wiggle {
+    0% {transform: rotate(-3deg);}
+    50% {transform: rotate(0deg);}
+    100% {transform: rotate(3deg);}
+}
+
+.logo:hover {
+    animation-play-state: running;
+}
+
+.logo {
+    animation-name: wiggle;
+    animation-direction: alternate-reverse;
+    animation-duration: 0.03s;
+    animation-play-state: paused;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
