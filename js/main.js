@@ -91,3 +91,12 @@ function dropdown() {
 
     }
 }
+
+function coordinate(event) {
+    var x = event.clientX
+    var y = event.clientY
+    // console.log(x, y)
+    var animationspeed = Math.abs(x-(screen.width/2) + y-(screen.height/2))
+    console.log(animationspeed)
+    document.getElementById("logo").style.animationDuration = animationspeed + "ms"
+}

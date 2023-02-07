@@ -44,20 +44,37 @@ body {
 } */
 
 @keyframes wiggle {
-    0% {transform: rotate(-3deg);}
-    50% {transform: rotate(0deg);}
-    100% {transform: rotate(3deg);}
+    /* 0% {transform: rotate(-3deg);} */
+    /* 50% {transform: rotate(0deg);} */
+    /* 100% {transform: rotate(3deg);} */
+    0% {transform: translate(10px, 10px);}
+    25% {transform: translate(-10px, 10px);}
+    57% {transform: translate(10px, -10px);}
+    100% {transform: translate(-10px, -10px);}
 }
 
-.logo:hover {
+/* .logo:hover {
     animation-play-state: running;
-}
+} */
 
 .logo {
     animation-name: wiggle;
     animation-direction: alternate-reverse;
-    animation-duration: 0.03s;
-    animation-play-state: paused;
+    /* animation-duration: 1s; */
+    animation-play-state: running;
     animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flashing {
+    0% {background-color: chartreuse; color: blueviolet;}
+    50% {background-color: darkorange; color: hotpink;}
+    100% {background-color: crimson; color: blue;}
+}
+
+.flashing {
+    animation-name: flashing;
+    animation-duration: 10ms;
+    animation-play-state: running;
     animation-iteration-count: infinite;
 }

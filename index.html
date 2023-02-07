@@ -15,7 +15,14 @@
         <link rel="stylesheet" href="w3.css">
         <!-- <script src="js/lib/matter.js"></script> -->
     </head>
-    <body class="w3-center w3-display-middle w3-container">
+    <body onmousemove="coordinate(event)">
+        <div  class="w3-center w3-display-middle w3-container">
+            <img src="img/otter.land.gif" width="500em" id="logo" class="logo" onclick="dropdown()">
+            <div class="dropdown-hide flashing" id="dropdown">
+                <p>Found me!! :3c</p>
+            </div>
+
+        </div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -23,10 +30,8 @@
 
 
                     <!-- <p class="title">Otterland</p> -->
-                    <img src="img/otter.land.gif" width="500em" id="logo" class="logo" onclick="dropdown()">
-                    <div class="dropdown-hide" id="dropdown">
-                        <p>Found me!! :3c</p>
-                    </div>
+
+
                     <!-- <p class="paragraph">There is nothing here yet.</p> -->
                     <!-- <img src="https://animals.sandiegozoo.org/sites/default/files/2016-09/animals_hero_otter.jpg" alt="" width="300em"> -->
 
