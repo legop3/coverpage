@@ -4,25 +4,6 @@ body {
     word-wrap: break-word;
 }
 
-
-html {
-    position: fixed;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  body {
-    margin: 0;
-    width: 100vw; 
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
-
-
-
-
 .title {
     color: white;
     /* right: 50%; */
@@ -83,12 +64,6 @@ html {
     animation-play-state: running;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    width:100%
-}
-
-.logo:hover {
-    filter:hue-rotate(100deg);
-    cursor:pointer
 }
 
 @keyframes flashing {
@@ -102,9 +77,4 @@ html {
     animation-duration: 10ms;
     animation-play-state: running;
     animation-iteration-count: infinite;
-}
-
-.linkbox {
-    background-color: black;
-    border-radius: 10%;
 }

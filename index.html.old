@@ -15,15 +15,12 @@
         <link rel="stylesheet" href="w3.css">
         <!-- <script src="js/lib/matter.js"></script> -->
     </head>
-    <body>
+    <body onmousemove="coordinate(event)">
         <div class="paragraph w3-center"><h1>Welcome to Otter Land</h1></div>
         <div  class="w3-center w3-display-middle w3-container">
-            <img src="img/otter.land.gif" id="logo" class="logo" onclick="dropdown()">
+            <img src="img/otter.land.gif" width="500em" id="logo" class="logo" onclick="dropdown()">
             <div class="dropdown-hide flashing" id="dropdown">
-                <div class="linkbox">
-                    <p>wjkhdkjsaf</p>
-                    <p>ufis7fy98shfukj</p>
-                </div>
+                <p>Found me!! :3c</p>
             </div>
 
         </div>
