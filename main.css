@@ -28,7 +28,7 @@ html {
     /* right: 50%; */
     /* position: fixed; */
     /* float: left; */
-    transform: rotate(4deg);
+    transform: rotate(3deg);
     font-size: 4em;
 }
 
@@ -66,10 +66,10 @@ html {
     /* 0% {transform: rotate(-3deg);} */
     /* 50% {transform: rotate(0deg);} */
     /* 100% {transform: rotate(3deg);} */
-    0% {transform: translate(10px, 10px);}
-    25% {transform: translate(-10px, 10px);}
-    57% {transform: translate(10px, -10px);}
-    100% {transform: translate(-10px, -10px);}
+    0% {transform: translate(5px, 5px);}
+    25% {transform: translate(-5px, 5px);}
+    57% {transform: translate(5px, -5px);}
+    100% {transform: translate(-5px, -5px);}
 }
 
 /* .logo:hover {
@@ -79,32 +79,42 @@ html {
 .logo {
     animation-name: wiggle;
     animation-direction: alternate-reverse;
-    /* animation-duration: 1s; */
-    animation-play-state: running;
+    animation-duration: 10ms;
+    animation-play-state:paused;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    width:100%
+    width:30vmax;
+
 }
 
 .logo:hover {
     filter:hue-rotate(100deg);
-    cursor:pointer
+    cursor:pointer;
+    animation-play-state: running;
 }
 
 @keyframes flashing {
-    0% {background-color: chartreuse; color: blueviolet;}
-    50% {background-color: darkorange; color: hotpink;}
-    100% {background-color: crimson; color: blue;}
+    0% {background-color: rgb(0, 229, 255); color: rgb(226, 131, 43);}
+    /* 50% {background-color: darkorange; color: hotpink;} */
+    100% {background-color: rgb(226, 131, 43); color: rgb(0, 229, 255);}
 }
 
 .flashing {
     animation-name: flashing;
-    animation-duration: 10ms;
+    animation-duration: 100ms;
     animation-play-state: running;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 .linkbox {
-    background-color: black;
-    border-radius: 10%;
+    background-image: url("img/backgroundanim.gif");
+    color: #c175ff !important;
 }
+a {
+    font-size: 1.5em;
+    background-color: white;
+}
+
+
+
