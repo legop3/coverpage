@@ -66,10 +66,10 @@ html {
     /* 0% {transform: rotate(-3deg);} */
     /* 50% {transform: rotate(0deg);} */
     /* 100% {transform: rotate(3deg);} */
-    0% {transform: translate(5px, 5px);}
-    25% {transform: translate(-5px, 5px);}
-    57% {transform: translate(5px, -5px);}
-    100% {transform: translate(-5px, -5px);}
+    0% {transform: translate(2px, 2px);}
+    25% {transform: translate(-2px, 2px);}
+    57% {transform: translate(2px, -2px);}
+    100% {transform: translate(-2px, -2px);}
 }
 
 /* .logo:hover {
@@ -101,10 +101,11 @@ html {
 
 .flashing {
     animation-name: flashing;
-    animation-duration: 100ms;
+    animation-duration: 200ms;
     animation-play-state: running;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation-direction: normal;
+    animation-timing-function: linear;
 }
 
 .linkbox {
@@ -113,7 +114,7 @@ html {
 }
 a {
     font-size: 1.5em;
-    background-color: white;
+    background-color: rgb(66, 0, 98) !important; 
 }
 
 
