@@ -5,4 +5,5 @@ document.addEventListener("wheel", (event) => {
     score = score + event.deltaY
     // console.log(score)
     document.getElementById("score").innerHTML = `Score: ${Math.round(score)}`
+    document.getElementById("square").style.transform = "rotate(" + score + "deg)"
 })
