@@ -1,55 +1,81 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html lang="en" class="fixed h-full overflow-hidden">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Otter Land</title>
         <meta name="description" content="Otter Land">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href=""> -->
+        <!-- Tailwind is loaded from the CDN so this small static site does not need a build step. -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Custom animation CSS stays separate so Tailwind handles utilities while site-specific keyframes remain easy to edit. -->
         <link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="w3.css">
-        <!-- <script src="js/lib/matter.js"></script> -->
     </head>
-    <body>
-        <div class="paragraph w3-center title flashing"><h1>OTTERLAND</h1></div>
-        <div  class="w3-center w3-display-middle w3-container">
-            <img src="img/otter.land.gif" id="logo" class="logo" onclick="dropdown()">
-            <div class="dropdown-hide flashing" id="dropdown">
-                <div class="linkbox">
-                    <a href="pages/scroll/index.html">SCROLL.</a>
+    <body class="m-0 h-full w-screen overflow-y-auto overflow-x-hidden bg-[#8dc6d9] font-sans text-white [word-wrap:break-word] [-webkit-overflow-scrolling:touch]">
+        <!-- The title keeps the original oversized, slightly tilted look while using Tailwind for layout and type sizing. -->
+        <header class="flashing mx-auto text-center text-[4em] leading-tight text-white rotate-[3deg] pt-10">
+            <h1 class="center">WELCOME TO OTTERLAND</h1>
+        </header>
+
+        <!-- Absolute centering replaces the old w3.css display-middle helper without keeping a second CSS dependency. -->
+        <main class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center">
+            <!-- The image remains the interactive trigger; the hover state mirrors the original hue shift and pointer affordance. -->
+            <!-- <img
+                src="img/otter.land.gif"
+                id="logo"
+                class="wiggle-on-hover mx-auto w-[30vmax] cursor-pointer hover:hue-rotate-[100deg]"
+                alt="Otter Land logo"
+                onclick="dropdown()"
+            >
+            <p></p> -->
+            <p class="bg-black text-white text-4xl">My web-based projects:</p>
+
+            <!-- Hidden is toggled by js/main.js because it is Tailwind's standard display utility for collapsed content. -->
+            <nav id="dropdown" class="text-center">
+                <!-- scroll: -->
+                <div class="mx-auto block bg-[url('img/backgroundanim.gif')] py-4 gap-10 flex items-center text-center flex-col overflow-hidden">
+                    <a
+                        href="https://rover.otter.land"
+                        class="inline-block bg-slate-700 px-2 py-1 text-[1.5em] text-white rounded flex"
+                    >
+                        Roomba Rover! (the coolest one) <img src="https://rover.otter.land/bitmap.png" class="h-10 w-10 ml-1">
+                    </a>
+
+                    <a
+                        href="https://textpage.otter.land"
+                        class="inline-block bg-white px-2 py-1 text-[1.5em] text-black flex"
+                    >
+                        Textpage
+                        <div class="h-10 bg-black w-1 ml-1 animate-pulse"></div>
+                    </a>
+
+                    <a
+                        href="https://plot.otter.land"
+                        class="inline-block gridbg px-2 py-1 text-[1.5em] text-blue-300"
+                    >
+                        NoniPlotter
+                    </a>
+
+                    <a
+                        href="pages/scroll/index.html"
+                        class="inline-block bg-black px-2 py-1 text-[1.5em] text-lime-300 animate-spin"
+                    >
+                        SCROLL.
+                    </a>
                 </div>
-            </div>
 
-        </div>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+                <!-- rover.otter.land:
+                <div class="mx-auto block bg-[url('img/backgroundanim.gif')] py-4">
+                    <a
+                        href="pages/scroll/index.html"
+                        class="inline-block bg-[#420062] px-2 py-1 text-[1.5em] text-[#c175ff]"
+                    >
+                        SCROLL.
+                    </a>
+                </div> -->
+            </nav>
+        </main>
 
-
-
-                    <!-- <p class="title">Otterland</p> -->
-
-
-                    <!-- <p class="paragraph">There is nothing here yet.</p> -->
-                    <!-- <img src="https://animals.sandiegozoo.org/sites/default/files/2016-09/animals_hero_otter.jpg" alt="" width="300em"> -->
-
-
-
-
-
-
-
-
-
-            
-            <!-- <div id="gamebox" class="gamebox"></div> -->
-
-            <script src="js/main.js"></script>
-            
+        <script src="js/main.js"></script>
     </body>
 </html>

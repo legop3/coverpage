@@ -1,121 +1,62 @@
-body {
-    background-color: #8dc6d9;
-    font-family: Arial, Helvetica, sans-serif;
-    word-wrap: break-word;
-}
-
-
-html {
-    position: fixed;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  body {
-    margin: 0;
-    width: 100vw; 
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
-
-
-
-
-.title {
-    color: white;
-    /* right: 50%; */
-    /* position: fixed; */
-    /* float: left; */
-    transform: rotate(3deg);
-    font-size: 4em;
-}
-
-.paragraph, p {
-    color: white;
-    right: 50%;
-    /* transform: (translate(0, +50%)); */
-    /* position: fixed; */
-    /* font-weight: bold; */
-    font-size: 1.5em;
-}
-
-.gamebox {
-    float: right;
-}
-
-.dropdown-hide {
-    display: none;
-}
-.dropdown-show {
-    display: contents;
-}
-
-/* @keyframes dropdown {
-    0% {transform: rotate(0deg);}
-    100% { transform: rotate(90deg);}
-} */
-
-/* .skew {
-    animation-name: dropdown;
-    animation-duration: 3s;
-} */
-
+/*
+    These animations stay in plain CSS because they are custom to this site:
+    Tailwind CDN is best for utility styling, while named keyframes remain clearer
+    here than trying to encode every frame as one-off arbitrary classes.
+*/
 @keyframes wiggle {
-    /* 0% {transform: rotate(-3deg);} */
-    /* 50% {transform: rotate(0deg);} */
-    /* 100% {transform: rotate(3deg);} */
-    0% {transform: translate(2px, 2px);}
-    25% {transform: translate(-2px, 2px);}
-    57% {transform: translate(2px, -2px);}
-    100% {transform: translate(-2px, -2px);}
+    0% { transform: translate(2px, 2px); }
+    25% { transform: translate(-2px, 2px); }
+    57% { transform: translate(2px, -2px); }
+    100% { transform: translate(-2px, -2px); }
 }
 
-/* .logo:hover {
-    animation-play-state: running;
-} */
-
-.logo {
-    animation-name: wiggle;
-    animation-direction: alternate-reverse;
-    animation-duration: 10ms;
-    animation-play-state:paused;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    width:30vmax;
-
-}
-
-.logo:hover {
-    filter:hue-rotate(100deg);
-    cursor:pointer;
-    animation-play-state: running;
-}
-
+/*
+    The original page flashed the title and dropdown between cyan and orange.
+    Keeping the animation preserves the old visual identity while Tailwind handles
+    the static sizing, positioning, color fallbacks, and spacing.
+*/
 @keyframes flashing {
-    0% {background-color: rgb(0, 229, 255); color: rgb(226, 131, 43);}
-    /* 50% {background-color: darkorange; color: hotpink;} */
-    100% {background-color: rgb(226, 131, 43); color: rgb(0, 229, 255);}
+    0% {
+        background-color: rgb(0, 229, 255);
+        color: rgb(226, 131, 43);
+    }
+
+    100% {
+        background-color: rgb(226, 131, 43);
+        color: rgb(0, 229, 255);
+    }
+}
+/* 
+    Grid background for the plot.otter.land link :3
+*/
+.gridbg {
+  --color: rgba(114, 114, 114, 0.3);
+  background-color: #191a1a;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  background-size: 55px 55px;
 }
 
-.flashing {
-    animation-name: flashing;
-    animation-duration: 200ms;
+/*
+    Tailwind's arbitrary animation utilities can point at these named keyframes,
+    but these small semantic classes keep repeated animation settings readable.
+*/
+.wiggle-on-hover {
+    animation: wiggle 10ms linear infinite alternate-reverse paused;
+}
+
+/*
+    The animation is paused until hover so the logo is calm by default, then
+    jitters only when the user is interacting with the clickable image.
+*/
+.wiggle-on-hover:hover {
     animation-play-state: running;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-timing-function: linear;
 }
 
-.linkbox {
-    background-image: url("img/backgroundanim.gif");
-    color: #c175ff !important;
+/*
+    This class is reused for the title and dropdown because both elements share
+    the same high-contrast flashing treatment from the original design.
+*/
+.flashing {
+    animation: flashing 200ms steps(1, start) infinite;
 }
-a {
-    font-size: 1.5em;
-    background-color: rgb(66, 0, 98) !important; 
-}
-
-
-
